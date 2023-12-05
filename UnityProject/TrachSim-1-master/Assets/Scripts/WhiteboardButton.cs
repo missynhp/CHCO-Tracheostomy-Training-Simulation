@@ -38,7 +38,7 @@ public class WhiteboardButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
     }
 
     private void OnMouseOver()
@@ -66,7 +66,7 @@ public class WhiteboardButton : MonoBehaviour
                 Camera.main.GetComponent<MenuCamera>().Back();
                 this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
             }
-            else 
+            else
             {
                 ButtonSelection();
                 Camera.main.GetComponent<MenuCamera>().Next();
@@ -75,8 +75,9 @@ public class WhiteboardButton : MonoBehaviour
         }
     }
 
-    private void ButtonSelection() 
+    private void ButtonSelection()
     {
+        Debug.Log(this.button_type);
         switch (this.button_type)
         {
             case button_types.ENT:
@@ -104,10 +105,18 @@ public class WhiteboardButton : MonoBehaviour
                 this.section_4.SetActive(true);
                 break;
             case button_types.Start:
-                SceneManager.LoadScene("11YearOldIntro");
+                if (this.section_4.activeSelf)
+                {
+                    SceneManager.LoadScene("11YearOldIntro");
+                }
+                else
+                {
+                    SceneManager.LoadScene("InfantIntro");
+                }
                 break;
             case button_types.Quit:
                 Application.Quit();
+                UnityEditor.EditorApplication.isPlaying = false;
                 break;
         }
     }
