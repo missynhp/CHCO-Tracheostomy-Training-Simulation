@@ -1,0 +1,51 @@
+{
+    "Name": "Kid",
+    "Sex": "Female",
+    "Age": {
+        "ScalarTime": {
+            "Value": 11.0,
+            "Unit": "yr"
+        }
+    },
+    "Weight": {
+        "ScalarMass": {
+            "Value": 80.0,
+            "Unit": "lb"
+        }
+    },
+    "Height": {
+        "ScalarLength": {
+            "Value": 56.7,
+            "Unit": "in"
+        }
+    },
+    "BodyFatFraction": {
+        "Scalar0To1": {
+            "Value": 0.22
+        }
+    },
+    "DiastolicArterialPressureBaseline": {
+        "ScalarPressure": {
+            "Value": 73.5,
+            "Unit": "mmHg"
+        }
+    },
+    "HeartRateBaseline": {
+        "ScalarFrequency": {
+            "Value": 50.0,
+            "Unit": "1/min"
+        }
+    },
+    "RespirationRateBaseline": {
+        "ScalarFrequency": {
+            "Value": 8.0,
+            "Unit": "1/min"
+        }
+    },
+    "SystolicArterialPressureBaseline": {
+        "ScalarPressure": {
+            "Value": 114.0,
+            "Unit": "mmHg"
+        }
+    }
+}
