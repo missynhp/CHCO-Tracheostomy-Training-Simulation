@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Home - HUD Template.unity
     guid: f707651463ab24a7b83ba1b596b5d624
+  - enabled: 1
+    path: Assets/Scenes/InfantIntro.unity
+    guid: 3ea1c755203df4d8884501c2bebfc524
   m_configObjects: {}
