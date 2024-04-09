@@ -1,4 +1,0 @@
-repository "TrachSim-1-master@missynhp@cloud"
-  path "/"
-    br "/main"
-    co "/main"
