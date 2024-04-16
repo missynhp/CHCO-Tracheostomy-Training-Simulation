@@ -11,6 +11,7 @@ public class GlobalVarStorage : MonoBehaviour
     //Defining global vars for InspectTrachDislodgedMenu
     public static bool CalledACode;
     public static bool CalledENT;
+    public static bool PatientMasked;
 
     //Defining global vars for InspectTrachInPlaceMenu
     public static bool IP_CalledACode;
@@ -38,7 +39,8 @@ public class GlobalVarStorage : MonoBehaviour
 
             iter++;
         }
-        else{
+        else
+        {
             Destroy(this.gameObject);
         }
     }
@@ -54,11 +56,12 @@ public class GlobalVarStorage : MonoBehaviour
 
     }
 
-    public static void ResetVariables() 
+    public static void ResetVariables()
     {
         //For dislodged branch
         CalledACode = false;
         CalledENT = false;
+        PatientMasked = false;
 
         // For in place branch
         IP_CalledACode = false;

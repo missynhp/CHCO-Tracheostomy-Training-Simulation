@@ -37,7 +37,7 @@ public class InspectTrachDislodgedMenu : MonoBehaviour
 
     public void TaskOnCallACodeClick()
     {
-        if(CallACode.activeInHierarchy == false)
+        if (CallACode.activeInHierarchy == false)
         {
             CallACode.SetActive(true);
         }
@@ -48,13 +48,13 @@ public class InspectTrachDislodgedMenu : MonoBehaviour
 
     public void TaskOnOKClick()
     {
-        if(GlobalVarStorage.CalledACode == true && GlobalVarStorage.CalledENT == true)
+        if (GlobalVarStorage.CalledACode == true && GlobalVarStorage.CalledENT == true)
         {
             Debug.Log("test1");
             WhileWaitingForArrival();
             return;
         }
-        
+
         DislodgedChoicesPanel.SetActive(true);
         if (CallACode.activeInHierarchy == true)
         {
@@ -69,7 +69,7 @@ public class InspectTrachDislodgedMenu : MonoBehaviour
 
     public void TaskOnCallENTClick()
     {
-        if(CallENT.activeInHierarchy == false)
+        if (CallENT.activeInHierarchy == false)
         {
             CallENT.SetActive(true);
         }
