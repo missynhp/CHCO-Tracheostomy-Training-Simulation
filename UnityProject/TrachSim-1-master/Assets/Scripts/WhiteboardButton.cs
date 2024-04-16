@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class WhiteboardButton : MonoBehaviour
-{
-
-    public enum button_types
-    {
+public class WhiteboardButton : MonoBehaviour {
+    public enum buttonTypes {
         Next,
         Back,
         ENT,
@@ -20,101 +17,84 @@ public class WhiteboardButton : MonoBehaviour
         Quit
     };
 
-    public button_types button_type;
-    public int button_section;
+    public buttonTypes buttonType;
+    public int buttonSection;
 
-    private GameObject stateVars;
-    private GameObject section_4;
-    private GameObject section_5;
+	private GameObject descriptionWhiteboard;
+	private GameObject stateVars;
+    private GameObject femaleIntro;
+    private GameObject maleIntro;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        stateVars = GameObject.Find("State Vars");
-        section_4 = GameObject.Find("Section_4");
-        section_5 = GameObject.Find("Section_5");
+    void Start() {
+		descriptionWhiteboard = GameObject.Find("DescriptionWhiteboard");
+        stateVars = GameObject.Find("StateVars");
+		
+		maleIntro = descriptionWhiteboard.transform.Find("MaleIntro").gameObject;
+        femaleIntro = descriptionWhiteboard.transform.Find("FemaleIntro").gameObject;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    private void OnMouseOver()
-    {
-        if (Camera.main.GetComponent<MenuCamera>().getCamPosition() == button_section)
-        {
-            this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+    private void OnMouseOver() {
+        if (Camera.main.GetComponent<MenuCamera>().getCamPosition() == buttonSection) {
+            this.gameObject.transform.Find("Outline").gameObject.SetActive(true);
         }
     }
 
-    private void OnMouseExit()
-    {
-        if (Camera.main.GetComponent<MenuCamera>().getCamPosition() == button_section)
-        {
-            this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+    private void OnMouseExit() {
+        if (Camera.main.GetComponent<MenuCamera>().getCamPosition() == buttonSection) {
+            this.gameObject.transform.Find("Outline").gameObject.SetActive(false);
         }
     }
 
-    private void OnMouseDown()
-    {
-        if (Camera.main.GetComponent<MenuCamera>().getCamPosition() == button_section)
-        {
-            if (button_type == button_types.Back)
-            {
+    private void OnMouseDown() {
+        if (Camera.main.GetComponent<MenuCamera>().getCamPosition() == buttonSection) {
+            if (buttonType == buttonTypes.Back) {
                 Camera.main.GetComponent<MenuCamera>().Back();
-                this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
-            }
-            else
-            {
+                this.gameObject.transform.Find("Outline").gameObject.SetActive(false);
+            } else if (buttonType == buttonTypes.Next) {
+				Camera.main.GetComponent<MenuCamera>().Next();
+                this.gameObject.transform.Find("Outline").gameObject.SetActive(true);
+		    } else {
                 ButtonSelection();
                 Camera.main.GetComponent<MenuCamera>().Next();
-                this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                this.gameObject.transform.Find("Outline").gameObject.SetActive(true);
             }
         }
     }
 
-    private void ButtonSelection()
-    {
-        Debug.Log(this.button_type);
-        switch (this.button_type)
-        {
-            case button_types.ENT:
-                stateVars.GetComponent<stateVars>().ResetPoistions();
+    private void ButtonSelection() {
+        switch (this.buttonType) {
+            case buttonTypes.ENT:
+                stateVars.GetComponent<stateVars>().ResetState();
                 stateVars.GetComponent<stateVars>().isENT = true;
                 break;
-            case button_types.Nurse:
-                stateVars.GetComponent<stateVars>().ResetPoistions();
+            case buttonTypes.Nurse:
+                stateVars.GetComponent<stateVars>().ResetState();
                 stateVars.GetComponent<stateVars>().isNurse = true;
                 break;
-            case button_types.PT:
-                stateVars.GetComponent<stateVars>().ResetPoistions();
+            case buttonTypes.PT:
+                stateVars.GetComponent<stateVars>().ResetState();
                 stateVars.GetComponent<stateVars>().isPT = true;
                 break;
-            case button_types.Other:
-                stateVars.GetComponent<stateVars>().ResetPoistions();
+            case buttonTypes.Other:
+                stateVars.GetComponent<stateVars>().ResetState();
                 stateVars.GetComponent<stateVars>().isOther = true;
                 break;
-            case button_types.Male:
-                this.section_5.SetActive(true);
-                this.section_4.SetActive(false);
+            case buttonTypes.Male:
+                this.femaleIntro.SetActive(false);			    
+                this.maleIntro.SetActive(true);
                 break;
-            case button_types.Female:
-                this.section_5.SetActive(false);
-                this.section_4.SetActive(true);
+            case buttonTypes.Female:
+                this.femaleIntro.SetActive(true);			    
+                this.maleIntro.SetActive(false);
                 break;
-            case button_types.Start:
-                if (this.section_4.activeSelf)
-                {
+            case buttonTypes.Start:
+                if (this.femaleIntro.activeSelf) {
                     SceneManager.LoadScene("11YearOldIntro");
-                }
-                else
-                {
+                } else {
                     SceneManager.LoadScene("InfantIntro");
                 }
                 break;
-            case button_types.Quit:
+            case buttonTypes.Quit:
                 Application.Quit();
                 UnityEditor.EditorApplication.isPlaying = false;
                 break;

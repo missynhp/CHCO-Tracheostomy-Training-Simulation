@@ -6,14 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/NewMainMenu.unity
-    guid: 19a4a47dcec06464983a7bee0ae43b82
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/Hospital Room Template.unity
-    guid: 1355a2b6623204a4596a8f089d22a4b4
+    path: Assets/Scenes/MainMenu.unity
+    guid: 0be2700c7ffa45444ba407b17f511a23
   - enabled: 1
     path: Assets/Scenes/Inc Pressure.unity
     guid: 05d2b4ce45d2d4f3ebda22b4d4c41dbc
