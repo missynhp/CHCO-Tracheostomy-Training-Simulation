@@ -123,6 +123,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &261424109 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2448761263954807865, guid: df319273aea278342ae976fbcddccdc0, type: 3}
+  m_PrefabInstance: {fileID: 2795338261486864413}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &261424110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261424109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38ad76d3f9ea09b49bc829ce76f82dad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio: {fileID: 24100000, guid: 211075e20ab4691438404ae10401f57b, type: 2}
 --- !u!1001 &762598182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -367,6 +385,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3330902067427647800, guid: 41d6cfdde45e5884f8769d4207f893d7, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 211075e20ab4691438404ae10401f57b, type: 2}
     - target: {fileID: 3330902067427647801, guid: 41d6cfdde45e5884f8769d4207f893d7, type: 3}
       propertyPath: m_RootOrder
       value: 4
