@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using UnityEngine.UI;
 using System.Linq;
 using System;
+using TMPro;
 
 
 public class NextStepsRealMenu : MonoBehaviour
@@ -56,9 +57,9 @@ public class NextStepsRealMenu : MonoBehaviour
     List<List<GameObject>> gameButtons = new List<List<GameObject>>();                     // composite lists that stores the other arrays together for ease of access.
 
     public GameObject rPanel;
-    public Text instructions;
+    public TMP_Text instructions;
 
-    View main, board, patient, monitor, trach;
+    View main, patient, monitor, trach;
     View state;
 
     void InspectTrach()
@@ -117,7 +118,7 @@ public class NextStepsRealMenu : MonoBehaviour
     {
         GameObject replaceButton = GameObject.Find("RCanvas (options)/RPanel/replaceButton");
         replaceButton.SetActive(false);
-        Text instructions = GameObject.Find("InstructionsGUI/InstructionCanvas/Panel/Text").GetComponent<Text>();
+        TMP_Text instructions = GameObject.Find("LCanvas (update)/LPanel/alerts").GetComponent<TMP_Text>();
         instructions.text = "How would you like to replace the trach?";
         GameObject picuButton = GameObject.Find("RCanvas (options)/RPanel/picuButton");
         GameObject preentButton = GameObject.Find("RCanvas (options)/RPanel/preentButton");
@@ -234,12 +235,11 @@ public class NextStepsRealMenu : MonoBehaviour
     {
 
         main = new View(0);
-        board = new View(3);
         patient = new View(1);
         monitor = new View(2);
         trach = new View(4);
 
-        main.Left = board;
+        main.Left = null;
         main.Right = monitor;
         main.Up = patient;
         main.Down = null;
@@ -249,12 +249,7 @@ public class NextStepsRealMenu : MonoBehaviour
         monitor.Up = null;
         monitor.Down = main;
 
-        board.Left = null;
-        board.Right = main;
-        board.Up = null;
-        board.Down = null;
-
-        patient.Left = board;
+        patient.Left = null;
         patient.Right = monitor;
         patient.Up = null;
         patient.Down = main;
@@ -262,7 +257,7 @@ public class NextStepsRealMenu : MonoBehaviour
         trach.Left = null;
         trach.Right = null;
         trach.Up = null;
-        trach.Down = patient;
+        trach.Down = null;
 
         state = main;
 
