@@ -28,6 +28,8 @@ public class GlobalVarStorage : MonoBehaviour
     public static bool RT_ENT;
     public static bool endStateSuccess;
 
+    public static string prev_scene;
+
     // Start is called before the first frame update
     void Start()
     {

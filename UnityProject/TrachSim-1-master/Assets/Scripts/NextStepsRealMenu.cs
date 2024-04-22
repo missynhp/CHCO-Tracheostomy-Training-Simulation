@@ -95,12 +95,21 @@ public class NextStepsRealMenu : MonoBehaviour
         GlobalVarStorage.CalledENT = true;
     }
 
-    void MaskPatient()
+    void MaskPatient(string patient)
     {
         // add mask object
         UnityEngine.Object mask = Resources.Load("prefabs/mask", typeof(GameObject));
-        GameObject newObject = Instantiate(mask, new Vector3(-24.13f, 12.136f, -5.791f), Quaternion.Euler(new Vector3(0, 180, 31.85f))) as GameObject;
-        newObject.transform.localScale = new Vector3(7, 7, 7);
+        if (patient == "11")
+        {
+
+            GameObject newObject = Instantiate(mask, new Vector3(-24.13f, 12.136f, -5.791f), Quaternion.Euler(new Vector3(0, 180, 31.85f))) as GameObject;
+            newObject.transform.localScale = new Vector3(7, 7, 7);
+        }
+        else if (patient == "infant")
+        {
+            GameObject newObject = Instantiate(mask, new Vector3(-5.663f, 12.241f, 23.62f), Quaternion.Euler(new Vector3(0, 270, 28.1f))) as GameObject;
+            newObject.transform.localScale = new Vector3(5, 5, 5);
+        }
         GlobalVarStorage.PatientMasked = true;
 
         // change buttons

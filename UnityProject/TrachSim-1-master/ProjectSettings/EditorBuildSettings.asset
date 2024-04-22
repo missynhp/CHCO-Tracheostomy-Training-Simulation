@@ -9,37 +9,37 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 0be2700c7ffa45444ba407b17f511a23
   - enabled: 1
-    path: Assets/Scenes/Inc Pressure.unity
+    path: Assets/Scenes/Unused/Inc Pressure.unity
     guid: 05d2b4ce45d2d4f3ebda22b4d4c41dbc
   - enabled: 1
-    path: Assets/Scenes/Inspect Trach.unity
+    path: Assets/Scenes/Unused/Inspect Trach.unity
     guid: 8800a0ece6a74427e969a326a1459663
   - enabled: 1
-    path: Assets/Scenes/Mask Patient.unity
+    path: Assets/Scenes/Unused/Mask Patient.unity
     guid: 4989e7ea0dbed4a1db4f4b2458135707
   - enabled: 1
-    path: Assets/Scenes/Patient Deteriorating.unity
+    path: Assets/Scenes/Unused/Patient Deteriorating.unity
     guid: 996c2f75a0df34cb1acc4208ad1461da
   - enabled: 1
-    path: Assets/Scenes/Replace Trach.unity
+    path: Assets/Scenes/Unused/Replace Trach.unity
     guid: ffc65eb75fad941c5acd9ef89076602a
   - enabled: 1
-    path: Assets/Scenes/teenF_scene.unity
+    path: Assets/Scenes/Unused/teenF_scene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/IncorrectCPRABG.unity
     guid: cc98420f260f84e378044b2cb71cf55c
   - enabled: 1
-    path: Assets/Scenes/Suction Trach.unity
+    path: Assets/Scenes/Unused/Suction Trach.unity
     guid: a17859e4ff734454d8ef3625abdc8c7c
   - enabled: 1
-    path: Assets/Scenes/IncorrectUniversal.unity
+    path: Assets/Scenes/Unused/IncorrectUniversal.unity
     guid: 41a536bf32ab04793aeafd216acb6c0c
   - enabled: 1
     path: Assets/Scenes/11YearOldIntro.unity
     guid: b3e235d43258b4233bb8367ff551e36f
   - enabled: 1
-    path: Assets/Scenes/Home - HUD Template.unity
+    path: Assets/Scenes/Unused/Home - HUD Template.unity
     guid: f707651463ab24a7b83ba1b596b5d624
   - enabled: 1
     path: Assets/Scenes/InfantIntro.unity
