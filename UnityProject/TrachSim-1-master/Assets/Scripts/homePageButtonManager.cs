@@ -201,6 +201,7 @@ public class homePageButtonManager : MonoBehaviour
         {
             GlobalVarStorage.prev_scene = "11YearOldIntro";
             SceneManager.LoadScene("IncorrectCPRABG");
+            GlobalVarStorage.prev_scene = "11YearOldIntro";
         }
         if (choice == "PullTies")
         {

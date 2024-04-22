@@ -3273,33 +3273,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394874735}
   m_CullTransparentMesh: 0
---- !u!114 &399933790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c300108eb8c4b144a3c57c88e71fca4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeStampList:
-    list: []
-  valuesTable:
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
 --- !u!1 &407685988
 GameObject:
   m_ObjectHideFlags: 0
@@ -3911,9 +3884,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784abafd9ac83194a9e9aaa5f1c25ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 399933790}
+  data: {fileID: 1893533469}
   sampleRate: 0.02
-  initialStateFile: {fileID: 4900000, guid: 0bfc8a4e1565147d1b5744e26189b7c3, type: 3}
+  initialStateFile: {fileID: 4900000, guid: 06f82e4b98625024bbf7b4dd1a555868, type: 3}
   serializationFormat: 0
 --- !u!4 &551965916
 Transform:
@@ -9608,11 +9581,9 @@ MonoBehaviour:
   - {fileID: 1630633546}
   gameButtonsForMonitor: []
   gameButtonsForDoor: []
-  gameButtonsForTrachInspect:
-  - {fileID: 1226603242}
-  - {fileID: 394874735}
   rPanel: {fileID: 3741392089130610504}
   instructions: {fileID: 1195167584}
+  pulse_engine: {fileID: 551965915}
 --- !u!1 &1242171850
 GameObject:
   m_ObjectHideFlags: 0
@@ -14162,6 +14133,33 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
+--- !u!114 &1893533469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c300108eb8c4b144a3c57c88e71fca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeStampList:
+    list: []
+  valuesTable:
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
 --- !u!1 &1899500309
 GameObject:
   m_ObjectHideFlags: 0
