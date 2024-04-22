@@ -7,6 +7,8 @@ using UnityEngine.UI;
 using System.Linq;
 using System;
 using TMPro;
+using Pulse.Unity;
+using Pulse.CDM;
 
 
 public class NextStepsRealMenu : MonoBehaviour
@@ -53,11 +55,13 @@ public class NextStepsRealMenu : MonoBehaviour
     public List<GameObject> gameButtonsForTrach = new List<GameObject>();                  // list of all the buttons that need to be active when the camera pans to the trach tube position.
     public List<GameObject> gameButtonsForMonitor = new List<GameObject>();                // list of all the buttons that need to be active when the camera pans to the monitor position.
     public List<GameObject> gameButtonsForDoor = new List<GameObject>();                   // list of all the buttons that need to be active when the camera pans to the door position.
-    public List<GameObject> gameButtonsForTrachInspect = new List<GameObject>();
+    private List<GameObject> gameButtonsForTrachInspect = new List<GameObject>();
     List<List<GameObject>> gameButtons = new List<List<GameObject>>();                     // composite lists that stores the other arrays together for ease of access.
 
     public GameObject rPanel;
     public TMP_Text instructions;
+
+    public PulseEngineDriver pulse_engine;
 
     View main, patient, monitor, trach;
     View state;
@@ -66,32 +70,41 @@ public class NextStepsRealMenu : MonoBehaviour
     {
         View p_state = state;
         state = trach;
-        animator.SetInteger("state", state.animator_ref);
+        GameObject trachbutton = GameObject.Find("RCanvas (options)/RPanel/trachButton");
+        GameObject codebutton = GameObject.Find("RCanvas (options)/RPanel/codeButton");
+        GameObject entbutton = GameObject.Find("RCanvas (options)/RPanel/entButton");
+        gameButtonsForTrachInspect.Add(codebutton);
+        gameButtonsForTrachInspect.Add(entbutton);
         StartCoroutine(swapActivity(gameButtons[state.animator_ref], gameButtons[p_state.animator_ref]));
+        gameButtonsForTrach.Remove(trachbutton);
+        trachbutton.SetActive(false);
+        animator.SetInteger("state", state.animator_ref);
     }
     // int[,] substates = { { 3, 3, 1, -1 }, { 2, 2, -1, 1 }, { 1, -1, -1, -1 }, { -1, 0, 0, 0 } };  // hard-coded state values that should change, based on arrow input, and current state. ex. [left, facing trach] = [0,2] -> 1 which is face door.
 
     void CallACode()
     {
         GameObject codeButton = GameObject.Find("RCanvas (options)/RPanel/codeButton");
-        gameButtons.Remove(gameButtonsForStart);
-        foreach (List<GameObject> lbut in gameButtons)
-        {
-            lbut.Remove(codeButton);
-        }
+        // gameButtons.Remove(gameButtonsForStart);
+        // foreach (List<GameObject> lbut in gameButtons)
+        // {
+        //     lbut.Remove(codeButton);
+        // }
         codeButton.SetActive(false);
+        gameButtonsForTrachInspect.Remove(codeButton);
         GlobalVarStorage.CalledACode = true;
     }
 
     void CallAnEnt()
     {
         GameObject entButton = GameObject.Find("RCanvas (options)/RPanel/entButton");
-        gameButtons.Remove(gameButtonsForStart);
-        foreach (List<GameObject> lbut in gameButtons)
-        {
-            lbut.Remove(entButton);
-        }
+        // gameButtons.Remove(gameButtonsForStart);
+        // foreach (List<GameObject> lbut in gameButtons)
+        // {
+        //     lbut.Remove(entButton);
+        // }
         entButton.SetActive(false);
+        gameButtonsForTrachInspect.Remove(entButton);
         GlobalVarStorage.CalledENT = true;
     }
 
@@ -118,9 +131,11 @@ public class NextStepsRealMenu : MonoBehaviour
         //     lbut.Remove(maskButton);
         // }
         GameObject replaceButton = GameObject.Find("RCanvas (options)/RPanel/replaceButton");
+        gameButtonsForTrachInspect.Add(replaceButton);
         replaceButton.SetActive(true);
         GameObject maskButton = GameObject.Find("RCanvas (options)/RPanel/maskButton");
         maskButton.SetActive(false);
+        gameButtonsForTrachInspect.Remove(maskButton);
     }
 
     void ReplaceTrach()
@@ -132,6 +147,13 @@ public class NextStepsRealMenu : MonoBehaviour
         GameObject picuButton = GameObject.Find("RCanvas (options)/RPanel/picuButton");
         GameObject preentButton = GameObject.Find("RCanvas (options)/RPanel/preentButton");
         GameObject entTrachButton = GameObject.Find("RCanvas (options)/RPanel/entTrachButton");
+
+        gameButtonsForTrachInspect.Remove(replaceButton);
+        gameButtonsForTrachInspect.Add(picuButton);
+        gameButtonsForTrachInspect.Add(preentButton);
+        gameButtonsForTrachInspect.Add(entTrachButton);
+
+
         picuButton.SetActive(true);
         preentButton.SetActive(true);
         entTrachButton.SetActive(true);
@@ -144,9 +166,14 @@ public class NextStepsRealMenu : MonoBehaviour
         for (int i = 0; i < rPanel.transform.childCount; i++)
         {
             oldbuttons.Add(rPanel.transform.GetChild(i).gameObject);
+            gameButtonsForTrachInspect.Remove(rPanel.transform.GetChild(i).gameObject);
         }
         GameObject increasePressureButton = GameObject.Find("RCanvas (options)/RPanel/increasePressureButton");
         GameObject stopButton = GameObject.Find("RCanvas (options)/RPanel/stopButton");
+
+        gameButtonsForTrachInspect.Add(increasePressureButton);
+        gameButtonsForTrachInspect.Add(stopButton);
+
         List<GameObject> newButtons = new List<GameObject> { stopButton, increasePressureButton };
         StartCoroutine(swapActivity(newButtons, oldbuttons));
     }
@@ -169,9 +196,12 @@ public class NextStepsRealMenu : MonoBehaviour
         for (int i = 0; i < rPanel.transform.childCount; i++)
         {
             oldbuttons.Add(rPanel.transform.GetChild(i).gameObject);
+            gameButtonsForTrachInspect.Remove(rPanel.transform.GetChild(i).gameObject);
         }
         GameObject nothingButton = GameObject.Find("RCanvas (options)/RPanel/nothingButton");
         GameObject pullTiesButton = GameObject.Find("RCanvas (options)/RPanel/pullTiesButton");
+        gameButtonsForTrachInspect.Add(nothingButton);
+        gameButtonsForTrachInspect.Add(pullTiesButton);
         List<GameObject> newButtons = new List<GameObject> { nothingButton, pullTiesButton };
         StartCoroutine(swapActivity(newButtons, oldbuttons));
 
@@ -184,23 +214,33 @@ public class NextStepsRealMenu : MonoBehaviour
         for (int i = 0; i < rPanel.transform.childCount; i++)
         {
             oldbuttons.Add(rPanel.transform.GetChild(i).gameObject);
+            gameButtonsForTrachInspect.Remove(rPanel.transform.GetChild(i).gameObject);
         }
         GameObject continueButton = GameObject.Find("RCanvas (options)/RPanel/continueButton");
+        gameButtonsForTrachInspect.Add(continueButton);
         StartCoroutine(swapActivity(new List<GameObject> { continueButton }, oldbuttons));
     }
 
     void Continue()
     {
         instructions.text = "Patient Intermittently Obstructs";
+        SEAirwayObstruction o = new SEAirwayObstruction();
+        o.GetSeverity().SetValue(.7);
+        pulse_engine.engine.ProcessAction(o);
+        animator.SetInteger("state", 0);
         List<GameObject> oldbuttons = new List<GameObject>();
         for (int i = 0; i < rPanel.transform.childCount; i++)
         {
             oldbuttons.Add(rPanel.transform.GetChild(i).gameObject);
+            gameButtonsForTrachInspect.Remove(rPanel.transform.GetChild(i).gameObject);
         }
         // "Adjust neck position", "Perform flexible tracheoscopy", "Replace tube with shorter tube"
         GameObject adjustButton = GameObject.Find("RCanvas (options)/RPanel/adjustButton");
         GameObject flexibleButton = GameObject.Find("RCanvas (options)/RPanel/flexibleButton");
         GameObject replaceWithShortButton = GameObject.Find("RCanvas (options)/RPanel/replaceWithShortButton");
+        gameButtonsForTrachInspect.Add(adjustButton);
+        gameButtonsForTrachInspect.Add(flexibleButton);
+        gameButtonsForTrachInspect.Add(replaceWithShortButton);
         StartCoroutine(swapActivity(new List<GameObject> { adjustButton, flexibleButton, replaceWithShortButton }, oldbuttons));
     }
 
@@ -211,8 +251,10 @@ public class NextStepsRealMenu : MonoBehaviour
         for (int i = 0; i < rPanel.transform.childCount; i++)
         {
             oldbuttons.Add(rPanel.transform.GetChild(i).gameObject);
+            gameButtonsForTrachInspect.Remove(rPanel.transform.GetChild(i).gameObject);
         }
         GameObject cprButton = GameObject.Find("RCanvas (options)/RPanel/cprButton");
+        gameButtonsForTrachInspect.Add(cprButton);
         StartCoroutine(swapActivity(new List<GameObject> { cprButton }, oldbuttons));
     }
 
@@ -220,6 +262,7 @@ public class NextStepsRealMenu : MonoBehaviour
     {
         instructions.text = "Failed to relieve intermitten obstruction";
         GameObject adjustButton = GameObject.Find("RCanvas (options)/RPanel/adjustButton");
+        gameButtonsForTrachInspect.Remove(adjustButton);
         adjustButton.SetActive(false);
     }
 
@@ -227,15 +270,18 @@ public class NextStepsRealMenu : MonoBehaviour
     {
         instructions.text = "Tracheostomy tube plowed into anterior wall of the patient's trachea";
         GameObject flexibleButton = GameObject.Find("RCanvas (options)/RPanel/flexibleButton");
+        gameButtonsForTrachInspect.Remove(flexibleButton);
         flexibleButton.SetActive(false);
     }
 
     void ReplaceWithShort()
     {
+        Debug.Log("ran");
         instructions.text = "Success";
         for (int i = 0; i < rPanel.transform.childCount; i++)
         {
             rPanel.transform.GetChild(i).gameObject.SetActive(false);
+            gameButtonsForTrachInspect.Remove(rPanel.transform.GetChild(i).gameObject);
         }
     }
 
@@ -260,13 +306,13 @@ public class NextStepsRealMenu : MonoBehaviour
 
         patient.Left = null;
         patient.Right = monitor;
-        patient.Up = null;
+        patient.Up = trach;
         patient.Down = main;
 
         trach.Left = null;
         trach.Right = null;
         trach.Up = null;
-        trach.Down = null;
+        trach.Down = patient;
 
         state = main;
 
@@ -293,11 +339,13 @@ public class NextStepsRealMenu : MonoBehaviour
 
         for (int i = 0; i < deactivateList.Count; i++)
         {
+            Debug.Log("Deactivate " + deactivateList[i]);
             deactivateList[i].SetActive(false);
         }
 
         for (int i = 0; i < activateList.Count; i++)
         {
+            Debug.Log("Activate " + activateList[i]);
             activateList[i].SetActive(true);
         }
     }
@@ -335,9 +383,10 @@ public class NextStepsRealMenu : MonoBehaviour
             StartCoroutine(swapActivity(gameButtons[state.animator_ref], gameButtons[p_state.animator_ref]));
         }
 
-        if (GlobalVarStorage.CalledACode && GlobalVarStorage.CalledENT && !GlobalVarStorage.PatientMasked)
+        if (GlobalVarStorage.CalledACode && GlobalVarStorage.CalledENT && !GlobalVarStorage.MaskOptionAdded)
         {
             GameObject maskButton = GameObject.Find("RCanvas (options)/RPanel/maskButton");
+            GlobalVarStorage.MaskOptionAdded = true;
             gameButtonsForTrachInspect.Add(maskButton);
             maskButton.SetActive(true);
         }
