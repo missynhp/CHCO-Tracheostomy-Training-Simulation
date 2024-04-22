@@ -190,7 +190,6 @@ public class NextStepsRealMenu : MonoBehaviour
 
     void Stop()
     {
-        Debug.Log("Stop");
         instructions.text = "What do you want to do with the trach ties?";
         List<GameObject> oldbuttons = new List<GameObject>();
         for (int i = 0; i < rPanel.transform.childCount; i++)
@@ -224,10 +223,7 @@ public class NextStepsRealMenu : MonoBehaviour
     void Continue()
     {
         instructions.text = "Patient Intermittently Obstructs";
-        SEAirwayObstruction o = new SEAirwayObstruction();
-        o.GetSeverity().SetValue(.7);
-        pulse_engine.engine.ProcessAction(o);
-        animator.SetInteger("state", 0);
+
         List<GameObject> oldbuttons = new List<GameObject>();
         for (int i = 0; i < rPanel.transform.childCount; i++)
         {
@@ -276,7 +272,6 @@ public class NextStepsRealMenu : MonoBehaviour
 
     void ReplaceWithShort()
     {
-        Debug.Log("ran");
         instructions.text = "Success";
         for (int i = 0; i < rPanel.transform.childCount; i++)
         {
@@ -323,6 +318,10 @@ public class NextStepsRealMenu : MonoBehaviour
         gameButtons.Add(gameButtonsForMonitor);
         gameButtons.Add(gameButtonsForDoor);
         gameButtons.Add(gameButtonsForTrachInspect);
+        SEAirwayObstruction o = new SEAirwayObstruction();
+        o.GetSeverity().SetValue(.7);
+        pulse_engine.engine.ProcessAction(o);
+        animator.SetInteger("state", 0);
         // var controller = animator.runtimeAnimatorController as AnimatorController;
         // foreach (AnimationClip clip in controller.animationClips)
         // {
@@ -339,13 +338,11 @@ public class NextStepsRealMenu : MonoBehaviour
 
         for (int i = 0; i < deactivateList.Count; i++)
         {
-            Debug.Log("Deactivate " + deactivateList[i]);
             deactivateList[i].SetActive(false);
         }
 
         for (int i = 0; i < activateList.Count; i++)
         {
-            Debug.Log("Activate " + activateList[i]);
             activateList[i].SetActive(true);
         }
     }

@@ -123,33 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &25389908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c300108eb8c4b144a3c57c88e71fca4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeStampList:
-    list: []
-  valuesTable:
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
 --- !u!21 &75242347
 Material:
   serializedVersion: 6
@@ -4709,7 +4682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784abafd9ac83194a9e9aaa5f1c25ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 25389908}
+  data: {fileID: 2036882906}
   sampleRate: 0.02
   initialStateFile: {fileID: 4900000, guid: fa8740d33904346fc90190dd918c5187, type: 3}
   serializationFormat: 0
@@ -8689,11 +8662,9 @@ MonoBehaviour:
   - {fileID: 904995990}
   gameButtonsForMonitor: []
   gameButtonsForDoor: []
-  gameButtonsForTrachInspect:
-  - {fileID: 1546377647}
-  - {fileID: 1562846084}
   rPanel: {fileID: 537020542}
   instructions: {fileID: 1513256058}
+  pulse_engine: {fileID: 551965915}
 --- !u!95 &1122452976
 Animator:
   serializedVersion: 3
@@ -16242,6 +16213,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020487723}
   m_CullTransparentMesh: 0
+--- !u!114 &2036882906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c300108eb8c4b144a3c57c88e71fca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeStampList:
+    list: []
+  valuesTable:
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
 --- !u!1 &2040149933
 GameObject:
   m_ObjectHideFlags: 0
