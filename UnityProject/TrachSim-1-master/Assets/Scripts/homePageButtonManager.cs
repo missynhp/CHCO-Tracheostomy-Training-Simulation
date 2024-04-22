@@ -133,7 +133,6 @@ public class homePageButtonManager : MonoBehaviour
 
     public void femaleIntro(string choice)
     {
-        Debug.Log(choice);
         if (choice == "SoundToggle")
         {
             sound_button.SetActive(false);
