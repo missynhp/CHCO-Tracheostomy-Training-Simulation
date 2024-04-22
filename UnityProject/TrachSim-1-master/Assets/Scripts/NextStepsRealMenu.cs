@@ -58,15 +58,27 @@ public class NextStepsRealMenu : MonoBehaviour
 
     public GameObject rPanel;
     public TMP_Text instructions;
+    public GameObject LPanel2;
 
     View main, patient, monitor, trach;
     View state;
+
+    void simplifyLPanel()
+    {
+        GameObject LPanel = GameObject.Find("LCanvas (update)/LPanel");
+        LPanel.SetActive(false);
+        LPanel2.SetActive(true);
+
+        // AlertPanel.transform.position = new Vector3(-240f, 391f, 0);
+    }
+
 
     void InspectTrach()
     {
         View p_state = state;
         state = trach;
         animator.SetInteger("state", state.animator_ref);
+        simplifyLPanel();
         StartCoroutine(swapActivity(gameButtons[state.animator_ref], gameButtons[p_state.animator_ref]));
     }
     // int[,] substates = { { 3, 3, 1, -1 }, { 2, 2, -1, 1 }, { 1, -1, -1, -1 }, { -1, 0, 0, 0 } };  // hard-coded state values that should change, based on arrow input, and current state. ex. [left, facing trach] = [0,2] -> 1 which is face door.
@@ -127,7 +139,6 @@ public class NextStepsRealMenu : MonoBehaviour
     {
         GameObject replaceButton = GameObject.Find("RCanvas (options)/RPanel/replaceButton");
         replaceButton.SetActive(false);
-        TMP_Text instructions = GameObject.Find("LCanvas (update)/LPanel/alerts").GetComponent<TMP_Text>();
         instructions.text = "How would you like to replace the trach?";
         GameObject picuButton = GameObject.Find("RCanvas (options)/RPanel/picuButton");
         GameObject preentButton = GameObject.Find("RCanvas (options)/RPanel/preentButton");
@@ -339,6 +350,7 @@ public class NextStepsRealMenu : MonoBehaviour
         {
             GameObject maskButton = GameObject.Find("RCanvas (options)/RPanel/maskButton");
             gameButtonsForTrachInspect.Add(maskButton);
+            GlobalVarStorage.PatientMasked = true;
             maskButton.SetActive(true);
         }
     }
