@@ -10,6 +10,9 @@ public class homePageButtonManager : MonoBehaviour
     GameObject svars;
     GameObject camera;
 
+    GameObject sound_slider;
+
+    GameObject sound_button;
     // public GameObject but1;
     // public GameObject but2;
     // public GameObject but3;
@@ -19,6 +22,8 @@ public class homePageButtonManager : MonoBehaviour
     {
         svars = GameObject.Find("State Vars");
         camera = GameObject.Find("Main Camera");
+        sound_slider = GameObject.Find("RCanvas (options)/RPanel/Sound Slider");
+        sound_button = GameObject.Find("RCanvas (options)/RPanel/SoundSetting");
     }
 
     // Update is called once per frame
@@ -29,12 +34,23 @@ public class homePageButtonManager : MonoBehaviour
 
     public void femaleIntro(string choice)
     {
+        if (choice == "SoundToggle")
+        {
+            sound_button.SetActive(false);
+            sound_slider.SetActive(true);
+        }
+        else
+        {
+            sound_button.SetActive(true);
+            sound_slider.SetActive(false);
+        }
         if (choice == "CPR")
         {
             GlobalVarStorage.CalledACode = false;
             GlobalVarStorage.CalledENT = false;
             GlobalVarStorage.PatientMasked = false;
             SceneManager.LoadScene("IncorrectCPRABG");
+            SceneManager.UnloadSceneAsync("11YearOldIntro");
         }
         if (choice == "Inspect")
         {
@@ -108,6 +124,7 @@ public class homePageButtonManager : MonoBehaviour
         {
             camera.SendMessage("ReplaceWithShort");
         }
+
     }
 
     public void test()
