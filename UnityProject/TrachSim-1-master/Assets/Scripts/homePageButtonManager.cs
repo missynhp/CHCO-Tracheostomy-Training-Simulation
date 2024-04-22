@@ -199,6 +199,7 @@ public class homePageButtonManager : MonoBehaviour
         }
         if (choice == "Nothing")
         {
+            GlobalVarStorage.prev_scene = "11YearOldIntro";
             SceneManager.LoadScene("IncorrectCPRABG");
             GlobalVarStorage.prev_scene = "11YearOldIntro";
         }

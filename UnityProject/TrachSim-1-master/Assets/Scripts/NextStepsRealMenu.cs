@@ -60,16 +60,29 @@ public class NextStepsRealMenu : MonoBehaviour
 
     public GameObject rPanel;
     public TMP_Text instructions;
+    public GameObject LPanel2;
 
     public PulseEngineDriver pulse_engine;
 
     View main, patient, monitor, trach;
     View state;
 
+    void simplifyLPanel()
+    {
+        GameObject LPanel = GameObject.Find("LCanvas (update)/LPanel");
+        LPanel.SetActive(false);
+        LPanel2.SetActive(true);
+
+        // AlertPanel.transform.position = new Vector3(-240f, 391f, 0);
+    }
+
+
     void InspectTrach()
     {
         View p_state = state;
         state = trach;
+        animator.SetInteger("state", state.animator_ref);
+        simplifyLPanel();
         GameObject trachbutton = GameObject.Find("RCanvas (options)/RPanel/trachButton");
         GameObject codebutton = GameObject.Find("RCanvas (options)/RPanel/codeButton");
         GameObject entbutton = GameObject.Find("RCanvas (options)/RPanel/entButton");
@@ -142,7 +155,6 @@ public class NextStepsRealMenu : MonoBehaviour
     {
         GameObject replaceButton = GameObject.Find("RCanvas (options)/RPanel/replaceButton");
         replaceButton.SetActive(false);
-        TMP_Text instructions = GameObject.Find("LCanvas (update)/LPanel/alerts").GetComponent<TMP_Text>();
         instructions.text = "How would you like to replace the trach?";
         GameObject picuButton = GameObject.Find("RCanvas (options)/RPanel/picuButton");
         GameObject preentButton = GameObject.Find("RCanvas (options)/RPanel/preentButton");
@@ -385,6 +397,7 @@ public class NextStepsRealMenu : MonoBehaviour
             GameObject maskButton = GameObject.Find("RCanvas (options)/RPanel/maskButton");
             GlobalVarStorage.MaskOptionAdded = true;
             gameButtonsForTrachInspect.Add(maskButton);
+            GlobalVarStorage.PatientMasked = true;
             maskButton.SetActive(true);
         }
     }
