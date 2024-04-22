@@ -62,6 +62,7 @@ public class homePageButtonManager : MonoBehaviour
             GlobalVarStorage.CalledACode = false;
             GlobalVarStorage.CalledENT = false;
             GlobalVarStorage.PatientMasked = false;
+            GlobalVarStorage.prev_scene = "InfantIntro";
             SceneManager.LoadScene("IncorrectCPRABG");
         }
         if (choice == "CallACode")
@@ -98,6 +99,7 @@ public class homePageButtonManager : MonoBehaviour
         }
         if (choice == "Nothing")
         {
+            GlobalVarStorage.prev_scene = "InfantIntro";
             SceneManager.LoadScene("IncorrectCPRABG");
         }
         if (choice == "PullTies")
@@ -131,6 +133,7 @@ public class homePageButtonManager : MonoBehaviour
 
     public void femaleIntro(string choice)
     {
+        Debug.Log(choice);
         if (choice == "SoundToggle")
         {
             sound_button.SetActive(false);
@@ -160,6 +163,7 @@ public class homePageButtonManager : MonoBehaviour
             GlobalVarStorage.CalledACode = false;
             GlobalVarStorage.CalledENT = false;
             GlobalVarStorage.PatientMasked = false;
+            GlobalVarStorage.prev_scene = "11YearOldIntro";
             SceneManager.LoadScene("IncorrectCPRABG");
         }
         if (choice == "CallACode")
@@ -197,6 +201,7 @@ public class homePageButtonManager : MonoBehaviour
         if (choice == "Nothing")
         {
             SceneManager.LoadScene("IncorrectCPRABG");
+            GlobalVarStorage.prev_scene = "11YearOldIntro";
         }
         if (choice == "PullTies")
         {

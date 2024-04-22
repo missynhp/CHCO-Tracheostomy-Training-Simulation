@@ -11,6 +11,7 @@ public class GlobalVarStorage : MonoBehaviour
     //Defining global vars for InspectTrachDislodgedMenu
     public static bool CalledACode;
     public static bool CalledENT;
+    public static bool MaskOptionAdded;
     public static bool PatientMasked;
 
     //Defining global vars for InspectTrachInPlaceMenu
