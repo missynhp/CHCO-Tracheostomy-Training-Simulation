@@ -12,7 +12,7 @@ public class IncorrectCPRABG : MonoBehaviour
         if (choice == "ReturnToPrevSlide")
         {
             Debug.Log("Pressed");
-            SceneManager.LoadScene("11YearOldIntro");
+            SceneManager.LoadScene(GlobalVarStorage.prev_scene);
         }
     }
 }
