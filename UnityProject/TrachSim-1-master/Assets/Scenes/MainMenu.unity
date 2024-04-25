@@ -173,7 +173,7 @@ TextMesh:
   m_FontSize: 130
   m_FontStyle: 1
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4292133033
@@ -196,7 +196,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  - {fileID: 2100000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -268,7 +268,7 @@ TextMesh:
   m_FontSize: 130
   m_FontStyle: 1
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4292133033
@@ -291,7 +291,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  - {fileID: 2100000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -655,7 +655,7 @@ TextMesh:
   m_FontSize: 150
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4292133033
@@ -678,7 +678,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  - {fileID: 2100000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -818,7 +818,7 @@ TextMesh:
   m_FontSize: 150
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4292133033
@@ -841,7 +841,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  - {fileID: 2100000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -913,10 +913,10 @@ TextMesh:
   m_FontSize: 100
   m_FontStyle: 1
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: e054f930246224779aa472d614bc1091, type: 3}
+  m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4279308582
+    rgba: 4278190080
 --- !u!23 &196279125
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -936,7 +936,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e054f930246224779aa472d614bc1091, type: 3}
+  - {fileID: 2100000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1528,7 +1528,7 @@ TextMesh:
   m_FontSize: 120
   m_FontStyle: 1
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278716433
@@ -1551,7 +1551,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  - {fileID: 2100000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1692,7 +1692,7 @@ TextMesh:
   m_FontSize: 175
   m_FontStyle: 1
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278716433
@@ -1715,7 +1715,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  - {fileID: 2100000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2026,7 +2026,7 @@ TextMesh:
   m_FontSize: 100
   m_FontStyle: 1
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278716433
@@ -2049,7 +2049,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  - {fileID: 2100000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2676,7 +2676,7 @@ TextMesh:
   m_FontSize: 130
   m_FontStyle: 1
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4292133033
@@ -2699,7 +2699,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  - {fileID: 2100000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2854,7 +2854,7 @@ TextMesh:
   m_FontSize: 150
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4292133033
@@ -2877,7 +2877,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  - {fileID: 2100000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2951,7 +2951,7 @@ TextMesh:
   m_FontSize: 130
   m_FontStyle: 1
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4292133033
@@ -2974,7 +2974,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  - {fileID: 2100000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3377,7 +3377,7 @@ TextMesh:
   m_FontSize: 175
   m_FontStyle: 1
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4292133033
@@ -3400,7 +3400,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  - {fileID: 2100000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3688,7 +3688,7 @@ TextMesh:
   m_FontSize: 150
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4292133033
@@ -3711,7 +3711,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  - {fileID: 2100000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4121,7 +4121,7 @@ TextMesh:
   m_FontSize: 100
   m_FontStyle: 1
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: e054f930246224779aa472d614bc1091, type: 3}
+  m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
@@ -4144,7 +4144,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e054f930246224779aa472d614bc1091, type: 3}
+  - {fileID: 2100000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4633,7 +4633,7 @@ TextMesh:
   m_FontSize: 130
   m_FontStyle: 1
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4292133033
@@ -4656,7 +4656,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b08502f3cb256416b976142bf893b657, type: 3}
+  - {fileID: 2100000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
